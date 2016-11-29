@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FizzBuzz", "FizzBuzz\FizzBuzz.vcxproj", "{12D54F55-1435-4051-BA9D-16B589BCBDDA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "463IslandPerimeter", "463IslandPerimeter\463IslandPerimeter.vcxproj", "{9F91DC66-AACB-40F3-832B-856C7AD824AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12D54F55-1435-4051-BA9D-16B589BCBDDA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{12D54F55-1435-4051-BA9D-16B589BCBDDA}.Debug|Win32.Build.0 = Debug|Win32
+		{12D54F55-1435-4051-BA9D-16B589BCBDDA}.Release|Win32.ActiveCfg = Release|Win32
+		{12D54F55-1435-4051-BA9D-16B589BCBDDA}.Release|Win32.Build.0 = Release|Win32
+		{9F91DC66-AACB-40F3-832B-856C7AD824AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9F91DC66-AACB-40F3-832B-856C7AD824AA}.Debug|Win32.Build.0 = Debug|Win32
+		{9F91DC66-AACB-40F3-832B-856C7AD824AA}.Release|Win32.ActiveCfg = Release|Win32
+		{9F91DC66-AACB-40F3-832B-856C7AD824AA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
