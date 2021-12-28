@@ -1,3 +1,5 @@
+package problems.p0001_0100.p0026_remove_duplicates_from_sorted_array;
+
 public class RemoveDuplicatesFromSortedArray {
     public static int removeDuplicates(int[] nums) {
         int i = 0;

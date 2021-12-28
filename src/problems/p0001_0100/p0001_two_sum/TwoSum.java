@@ -1,3 +1,5 @@
+package problems.p0001_0100.p0001_two_sum;
+
 import java.util.HashMap;
 
 public class TwoSum {

@@ -1,3 +1,5 @@
+package problems.p0101_0200.p0136_single_number;
+
 public class SingleNumber {
     public static int singleNumber(int[] nums) {
         for (int i = 1; i < nums.length; i++) {

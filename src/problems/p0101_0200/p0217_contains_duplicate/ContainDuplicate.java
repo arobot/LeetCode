@@ -1,3 +1,5 @@
+package problems.p0101_0200.p0217_contains_duplicate;
+
 import java.util.HashSet;
 
 public class ContainDuplicate {

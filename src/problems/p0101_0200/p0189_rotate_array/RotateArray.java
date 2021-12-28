@@ -1,3 +1,5 @@
+package problems.p0101_0200.p0189_rotate_array;
+
 public class RotateArray {
     static void rotate(int[] nums, int k) {
         k %= nums.length;
