@@ -6,6 +6,11 @@ public class PrintUtils {
             System.out.print(n + ", ");
     }
 
+    public static void printArray(char[] arrays) {
+        for (char n : arrays)
+            System.out.print(n + ", ");
+    }
+
     public static void printMatrix(int[][] matrix) {
         int n = matrix[0].length;
         for (int x = 0; x < n; x++) {
