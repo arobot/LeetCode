@@ -1,10 +1,10 @@
 package utils.node;
 
 public class ListNode {
-   public int val;
-   public ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 
@@ -37,10 +37,14 @@ public class ListNode {
     }
 
     public static ListNode createList(int len) {
-        ListNode head = new ListNode(1);
+        return createList(1, len);
+    }
+
+    public static ListNode createList(int startNum, int len) {
+        ListNode head = new ListNode(startNum);
         ListNode currentNode = head;
         for (int i = 2; i <= len; i++) {
-            ListNode node = new ListNode(i);
+            ListNode node = new ListNode(currentNode.val + 1);
             currentNode.next = node;
             currentNode = node;
         }
