@@ -31,3 +31,53 @@
 > 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
 >
 > 内存消耗：36.4 MB, 在所有 Java 提交中击败了70.91%的用户
+
+### 2. 左右对比递归
+
+通过不断的交换对比左右两个节点的值，并不断递归解决
+
+```java
+    public boolean isSymmtric2(TreeNode left, TreeNode right) {
+        if (left == null && right == null)
+            return true;
+        if (!(left != null && right != null))
+            return false;
+        if (left.val != right.val)
+            return false;
+        return isSymmtric2(left.left, right.right) && isSymmtric2(left.right, right.left);
+    }
+```
+
+> 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+>
+> 内存消耗：36.5 MB, 在所有 Java 提交中击败了47.31%的用户
+
+### 3. 迭代方式
+
+其实和`方法2`的逻辑上是相通的，都是不断的获取左右两个节点的值进行比较。
+
+```java
+    public boolean iteration(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root.left);
+        queue.add(root.right);
+        while (!queue.isEmpty()) {
+            TreeNode left = queue.poll(), right = queue.poll();
+            if (left == null && right == null)
+                continue;
+            if (left == null ^ right == null)
+                return false;
+            if (left.val != right.val)
+                return false;
+            queue.add(left.left);
+            queue.add(right.right);
+            queue.add(left.right);
+            queue.add(right.left);
+        }
+        return true;
+    }
+```
+
+> 执行用时：1 ms, 在所有 Java 提交中击败了24.60%的用户
+>
+> 内存消耗：37.9 MB, 在所有 Java 提交中击败了5.05%的用户
