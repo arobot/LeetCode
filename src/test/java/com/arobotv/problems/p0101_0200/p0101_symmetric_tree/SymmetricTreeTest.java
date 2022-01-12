@@ -27,4 +27,24 @@ public class SymmetricTreeTest {
         root.left = new TreeNode(2);
         Assertions.assertFalse(symmetricTree.isSymmtric(root));
     }
+
+    @Test
+    void testUnSymmetric() {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        Assertions.assertFalse(symmetricTree.isSymmtric(root));
+    }
+
+    @Test
+    void testSymmetric() {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(2);
+        Assertions.assertTrue(symmetricTree.isSymmtric(root));
+
+        root.left = new TreeNode(2, new TreeNode(3), null);
+        root.right = new TreeNode(2, null, new TreeNode(3));
+        Assertions.assertTrue(symmetricTree.isSymmtric(root));
+    }
 }
