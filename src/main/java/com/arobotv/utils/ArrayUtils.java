@@ -22,7 +22,7 @@ public class ArrayUtils {
     public static LinkedList<Integer> asList(int[] nums) {
         if (nums == null || nums.length == 0)
             return new LinkedList<>();
-        LinkedList<Integer> list = new LinkedList();
+        LinkedList<Integer> list = new LinkedList<>();
         for (int i : nums) {
             list.add(i);
         }

@@ -1,9 +1,5 @@
 package com.arobotv.problems.p0001_0100.p0088_merge_sorted_array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-
 import com.arobotv.utils.ArrayUtils;
 
 import org.junit.jupiter.api.Assertions;
