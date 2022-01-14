@@ -1,5 +1,7 @@
 package com.arobotv.utils;
 
+import java.util.LinkedList;
+
 public class ArrayUtils {
     public static void swap(int[] nums, int aIndex, int bIndex) {
         if (nums[aIndex] == nums[bIndex])
@@ -17,4 +19,13 @@ public class ArrayUtils {
         nums[aIndex[0]][aIndex[1]] ^= nums[bIndex[0]][bIndex[1]];
     }
 
+    public static LinkedList<Integer> asList(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return new LinkedList<>();
+        LinkedList<Integer> list = new LinkedList();
+        for (int i : nums) {
+            list.add(i);
+        }
+        return list;
+    }
 }
