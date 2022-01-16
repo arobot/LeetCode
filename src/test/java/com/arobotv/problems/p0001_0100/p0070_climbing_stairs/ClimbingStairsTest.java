@@ -23,4 +23,13 @@ public class ClimbingStairsTest {
         Assertions.assertEquals(5, climbingStairs.dp(4));
         Assertions.assertEquals(8, climbingStairs.dp(5));
     }
+
+    @Test
+    void testDp2() {
+        Assertions.assertEquals(1, climbingStairs.dp2(1));
+        Assertions.assertEquals(2, climbingStairs.dp2(2));
+        Assertions.assertEquals(3, climbingStairs.dp2(3));
+        Assertions.assertEquals(5, climbingStairs.dp2(4));
+        Assertions.assertEquals(8, climbingStairs.dp2(5));
+    }
 }

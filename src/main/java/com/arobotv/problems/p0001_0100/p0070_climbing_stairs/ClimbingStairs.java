@@ -33,6 +33,20 @@ public class ClimbingStairs {
         return dp[n];
     }
 
+    public int dp2(int n) {
+        if (n <= 2)
+            return n > 0 ? n : 0;
+        int a = 1, b = 2;
+        int i = 3;
+        while (i <= n) {
+            int tmp = b;
+            b = a + b;
+            a = tmp;
+            i++;
+        }
+        return b;
+    }
+
     public static void main(String[] args) {
         ClimbingStairs climbingStairs = new ClimbingStairs();
         long start = System.currentTimeMillis();
