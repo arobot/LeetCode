@@ -13,4 +13,23 @@ public class BestTimeToTradeStock {
         }
         return dp[prices.length - 1][0];
     }
+
+    /**
+     * 优化动态规划
+     * 
+     * @param prices
+     * @return
+     */
+    public int maxProfit2(int[] prices) {
+        if (prices.length == 1)
+            return 0;
+
+        int sold = 0;
+        int bought = -prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            sold = Math.max(sold, bought + prices[i]);
+            bought = Math.max(bought, -prices[i]);
+        }
+        return sold;
+    }
 }

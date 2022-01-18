@@ -42,6 +42,44 @@
 
 ### 1. 动态规划
 
+```java
+    public int maxProfit(int[] prices) {
+        if (prices.length == 1)
+            return 0;
+        int[][] dp = new int[prices.length][2];
+        dp[0][0] = 0;
+        dp[0][1] = -prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+            dp[i][1] = Math.max(dp[i - 1][1], -prices[i]);
+        }
+        return dp[prices.length - 1][0];
+    }
+```
+
 > 执行用时：23 ms, 在所有 Java 提交中击败了13.12%的用户
 >
 > 内存消耗：54.3 MB, 在所有 Java 提交中击败了19.22%的用户
+
+### 2. 动态规划优化
+
+因为只需要进行一次买卖，所以卖出或者持有所保持的利润只有一种情况，只需要不断的比较两种情况就可以达到目的。所以可以去除调数组，只用记下最优解即可。
+
+```java
+    public int maxProfit2(int[] prices) {
+        if (prices.length == 1)
+            return 0;
+
+        int sold = 0;
+        int bought = -prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            sold = Math.max(sold, bought + prices[i]);
+            bought = Math.max(bought, -prices[i]);
+        }
+        return sold;
+    }
+```
+
+> 执行用时：2 ms, 在所有 Java 提交中击败了89.17%的用户
+>
+> 内存消耗：51 MB, 在所有 Java 提交中击败了90.94%的用户

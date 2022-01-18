@@ -9,11 +9,13 @@ public class BestTimeToTradeStockTest {
     void testOne(){
         int[] prices = {7,1,5,3,6,4};
         Assertions.assertEquals(5, stock.maxProfit(prices));
+        Assertions.assertEquals(5, stock.maxProfit2(prices));
     }
 
     @Test
     void testTwo(){
         int[] prices = {7,6,5,4,3,1};
         Assertions.assertEquals(0, stock.maxProfit(prices));
+        Assertions.assertEquals(0, stock.maxProfit2(prices));
     }
 }
