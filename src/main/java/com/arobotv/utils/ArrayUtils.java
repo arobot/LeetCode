@@ -28,4 +28,14 @@ public class ArrayUtils {
         }
         return list;
     }
+
+    public  static <T> LinkedList<T> asList(T[] nums) {
+        if (nums == null || nums.length == 0)
+            return new LinkedList<>();
+        LinkedList<T> list = new LinkedList<>();
+        for (T i : nums) {
+            list.add(i);
+        }
+        return list;
+    }
 }
