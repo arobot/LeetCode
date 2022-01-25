@@ -1,7 +1,6 @@
 package com.arobotv.problems.p0101_0200.p0118_pascals_triangle;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
