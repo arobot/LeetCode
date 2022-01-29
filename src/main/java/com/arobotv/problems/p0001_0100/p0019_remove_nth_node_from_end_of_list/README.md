@@ -4,7 +4,7 @@
 
 ## 分析
 
-**结点构型**
+结点构型
 
 ```Java
  public class ListNode {
