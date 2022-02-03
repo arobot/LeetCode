@@ -62,4 +62,19 @@ public class ListNode {
         }
         System.out.println(sb.substring(0, sb.lastIndexOf(arrow)));
     }
+    public static String quote(ListNode head) {
+        StringBuilder sb = new StringBuilder();
+        String arrow = ", ";
+        sb.append("[");
+        while (head != null) {
+            sb.append(head.val);
+            sb.append(arrow);
+            head = head.next;
+        }
+        sb.replace(sb.length()-2, sb.length(), "]");
+        return sb.toString();
+    }
+    public static void printQuote(ListNode head) {
+        System.out.println(quote(head));
+    }
 }
