@@ -20,4 +20,20 @@ public class OddEvenLinkedList {
         }
         return head;
     }
+
+    public ListNode oddEvenList2(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode oddTail = head;
+        ListNode evenHead = head.next;
+        ListNode evenTail = evenHead;
+        while (evenTail != null && evenTail.next != null) {
+            oddTail.next = evenTail.next;
+            oddTail = evenTail.next;
+            evenTail.next = oddTail.next;
+            evenTail = oddTail.next;
+        }
+        oddTail.next = evenHead;
+        return head;
+    }
 }

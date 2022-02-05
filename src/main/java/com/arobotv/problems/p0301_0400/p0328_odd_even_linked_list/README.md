@@ -39,3 +39,29 @@
 > 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
 >
 > 内存消耗：40.8 MB, 在所有 Java 提交中击败了5.50%的用户
+
+### 2. 双指针优化
+
+实际上是不需要每次都去衔接奇偶链表额尾和头的。在完成奇偶链表各自的连接后，仅需要一次连接奇数的尾和偶数的头。
+
+```java
+    public ListNode oddEvenList2(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode oddTail = head;
+        ListNode evenHead = head.next;
+        ListNode evenTail = evenHead;
+        while (evenTail != null && evenTail.next != null) {
+            oddTail.next = evenTail.next;
+            oddTail = evenTail.next;
+            evenTail.next = oddTail.next;
+            evenTail = oddTail.next;
+        }
+        oddTail.next = evenHead;
+        return head;
+    }
+```
+
+> 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+>
+> 内存消耗：41.2 MB, 在所有 Java 提交中击败了5.02%的用户
