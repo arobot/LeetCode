@@ -15,6 +15,8 @@ public class IntersectionOfTwoLinkedListTest {
         ListNode b = new ListNode(11, inter);
         ListNode intersectionNode = intersectionOfTwoLinkedList.getIntersectionNode(a, b);
         Assertions.assertEquals(inter.val, intersectionNode.val);
+        intersectionNode = intersectionOfTwoLinkedList.getIntersectionNode2(a, b);
+        Assertions.assertEquals(inter.val, intersectionNode.val);
     }
 
     @Test
@@ -23,6 +25,8 @@ public class IntersectionOfTwoLinkedListTest {
         ListNode a = new ListNode(9, new ListNode(10, inter));
         ListNode b = new ListNode(11, inter);
         ListNode intersectionNode = intersectionOfTwoLinkedList.getIntersectionNode(a, b);
+        Assertions.assertEquals(null, intersectionNode);
+        intersectionNode = intersectionOfTwoLinkedList.getIntersectionNode2(a, b);
         Assertions.assertEquals(null, intersectionNode);
     }
 }

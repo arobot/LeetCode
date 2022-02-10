@@ -29,3 +29,23 @@
 > 执行用时：8 ms, 在所有 Java 提交中击败了10.92%的用户
 >
 > 内存消耗：44.8 MB, 在所有 Java 提交中击败了5.03%的用户
+
+### 2. 双指针
+
+其实换个思路思考，如果两个链表相交的话，必然最后会遍历到同一条链表上去。现在的问题就是如何找到这条链表的起点。
+
+```java
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+        ListNode tempA = headA;
+        ListNode tempB = headB;
+        while (tempA != tempB) {
+            tempA = tempA==null?headB:tempA.next;
+            tempB = tempB==null?headA:tempB.next;
+        }
+        return tempA;
+    }
+```
+
+> 执行用时：1 ms, 在所有 Java 提交中击败了99.81%的用户
+>
+> 内存消耗：44 MB, 在所有 Java 提交中击败了9.64%的用户
