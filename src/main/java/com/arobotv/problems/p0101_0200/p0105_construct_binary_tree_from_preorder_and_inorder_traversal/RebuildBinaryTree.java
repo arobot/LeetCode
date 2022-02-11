@@ -28,4 +28,32 @@ public class RebuildBinaryTree {
         }
         return left ? Arrays.copyOfRange(nums, 0, index) : Arrays.copyOfRange(nums, index + 1, nums.length);
     }
+
+    // public TreeNode buildTree(int[] preorder, int[] inorder) {
+    // return buildTree(preorder, 0, preorder.length, inorder, 0, inorder.length);
+    // }
+    public TreeNode buildTree(int[] preorder, int pStart, int pEnd, int[] inorder, int iStart, int iEnd) {
+        if (iStart >= iEnd)
+            return null;
+        if (iEnd - iStart == 1)
+            return new TreeNode(inorder[iStart]);
+        int pVal = preorder[pStart];
+        TreeNode pNode = new TreeNode(pVal);
+        int pIndexAtInOrder = findIndex(inorder, pVal);
+        int leftSize = pIndexAtInOrder - iStart;
+        if (leftSize > 0)
+            pNode.left = buildTree(preorder, pStart + 1, pStart + leftSize + 1, inorder, iStart, pIndexAtInOrder);
+        pNode.right = buildTree(preorder, pStart + leftSize + 1, pEnd, inorder, pIndexAtInOrder + 1, iEnd);
+        return pNode;
+    }
+
+    int findIndex(int[] nums, int target) {
+        int index = 0;
+        for (int i : nums) {
+            if (i == target)
+                return index;
+            index++;
+        }
+        return index;
+    }
 }

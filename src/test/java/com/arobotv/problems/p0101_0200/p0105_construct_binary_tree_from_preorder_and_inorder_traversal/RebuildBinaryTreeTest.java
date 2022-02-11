@@ -15,5 +15,33 @@ public class RebuildBinaryTreeTest {
         TreeNode root = rebuildBinaryTree.buildTree(preorder, inorder);
         Assertions.assertEquals("[3, 9, 20, 15, 7]", TreeUtils.preOrderList(root).toString());
         Assertions.assertEquals("[9, 3, 15, 20, 7]", TreeUtils.inOrderList(root).toString());
+
+        root = rebuildBinaryTree.buildTree(preorder, 0, preorder.length, inorder, 0, inorder.length);
+        Assertions.assertEquals("[3, 9, 20, 15, 7]", TreeUtils.preOrderList(root).toString());
+        Assertions.assertEquals("[9, 3, 15, 20, 7]", TreeUtils.inOrderList(root).toString());
+    }
+
+    @Test
+    void testBuildTree2() {
+        int[] preorder = { 4,1,2,3 }, inorder = { 1,2,3,4 };
+        TreeNode root = rebuildBinaryTree.buildTree(preorder, inorder);
+        Assertions.assertEquals("[4, 1, 2, 3]", TreeUtils.preOrderList(root).toString());
+        Assertions.assertEquals("[1, 2, 3, 4]", TreeUtils.inOrderList(root).toString());
+
+        root = rebuildBinaryTree.buildTree(preorder, 0, preorder.length, inorder, 0, inorder.length);
+        Assertions.assertEquals("[4, 1, 2, 3]", TreeUtils.preOrderList(root).toString());
+        Assertions.assertEquals("[1, 2, 3, 4]", TreeUtils.inOrderList(root).toString());
+    }
+
+    @Test
+    void testBuildTree3() {
+        int[] preorder = { 1,2,3,4 }, inorder = { 1,2,3,4 };
+        TreeNode root = rebuildBinaryTree.buildTree(preorder, inorder);
+        Assertions.assertEquals("[1, 2, 3, 4]", TreeUtils.preOrderList(root).toString());
+        Assertions.assertEquals("[1, 2, 3, 4]", TreeUtils.inOrderList(root).toString());
+
+        root = rebuildBinaryTree.buildTree(preorder, 0, preorder.length, inorder, 0, inorder.length);
+        Assertions.assertEquals("[1, 2, 3, 4]", TreeUtils.preOrderList(root).toString());
+        Assertions.assertEquals("[1, 2, 3, 4]", TreeUtils.inOrderList(root).toString());
     }
 }
