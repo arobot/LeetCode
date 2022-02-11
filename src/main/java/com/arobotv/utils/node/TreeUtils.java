@@ -26,7 +26,19 @@ public class TreeUtils {
         System.out.println(postOrderList(node, new LinkedList<>()));
     }
 
-    public static LinkedList<Integer> preOrderList(TreeNode node, LinkedList<Integer> nums) {
+    public static LinkedList<Integer> preOrderList(TreeNode node) {
+        return preOrderList(node, new LinkedList<>());
+    }
+
+    public static LinkedList<Integer> inOrderList(TreeNode node) {
+        return inOrderList(node, new LinkedList<>());
+    }
+
+    public static LinkedList<Integer> postOrderList(TreeNode node) {
+        return postOrderList(node, new LinkedList<>());
+    }
+
+    static LinkedList<Integer> preOrderList(TreeNode node, LinkedList<Integer> nums) {
         if (node == null)
             return nums;
         nums.add(node.val);
@@ -35,7 +47,7 @@ public class TreeUtils {
         return nums;
     }
 
-    public static LinkedList<Integer> inOrderList(TreeNode node, LinkedList<Integer> nums) {
+    static LinkedList<Integer> inOrderList(TreeNode node, LinkedList<Integer> nums) {
         if (node == null)
             return nums;
         inOrderList(node.left, nums);
@@ -44,7 +56,7 @@ public class TreeUtils {
         return nums;
     }
 
-    public static LinkedList<Integer> postOrderList(TreeNode node, LinkedList<Integer> nums) {
+    static LinkedList<Integer> postOrderList(TreeNode node, LinkedList<Integer> nums) {
         if (node == null)
             return nums;
         postOrderList(node.left, nums);
