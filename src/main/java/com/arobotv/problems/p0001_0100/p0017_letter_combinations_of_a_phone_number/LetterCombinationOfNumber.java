@@ -2,7 +2,6 @@ package com.arobotv.problems.p0001_0100.p0017_letter_combinations_of_a_phone_num
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
