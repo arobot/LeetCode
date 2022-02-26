@@ -52,4 +52,16 @@ public class FindPeakElementTest {
         FindPeakElement findPeakElement = new FindPeakElement();
         Assertions.assertEquals(0, findPeakElement.findPeakElement(new int[] { 3, 2, 1 }));
     }
+
+    @Test
+    void testFindPeakElement9() {
+        FindPeakElement findPeakElement = new FindPeakElement();
+        Assertions.assertEquals(3, findPeakElement.findPeakElement(new int[] { 4, 5, 6, 7, 0, 1, 2 }));
+    }
+
+    @Test
+    void testFindPeakElement10() {
+        FindPeakElement findPeakElement = new FindPeakElement();
+        Assertions.assertEquals(6, findPeakElement.findPeakElement(new int[] { 7, 0, 1, 2, 4, 5, 6 }));
+    }
 }

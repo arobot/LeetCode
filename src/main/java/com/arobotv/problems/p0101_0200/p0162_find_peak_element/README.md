@@ -11,26 +11,19 @@
 通过不断的在左右的增减区间跳转，一定会锁定任意一个峰值点出现。
 
 ```java
-    public int findPeakElement(int[] nums) {
-        if (nums.length == 1)
-            return 0;
-        return findPeak(nums, 0, nums.length - 1);
-    }
-
-    int findPeak(int[] nums, int start, int end) {
-        int mid = (start + end) >>> 1;
-        if (end - start == 1) {
-            return nums[start] < nums[end] ? end : start;
+        public int findPeakElement(int[] nums) {
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int m = (l + r) / 2;
+            if (nums[m] < nums[m + 1])
+                l = m + 1;
+            else
+                r = m;
         }
-        if (nums[mid - 1] < nums[mid] && nums[mid] < nums[mid + 1])
-            return findPeak(nums, mid, end);
-        else if (nums[mid - 1] > nums[mid] && nums[mid] > nums[mid + 1])
-            return findPeak(nums, start, mid);
-        else
-            return findPeak(nums, start + 1, end);
+        return l;
     }
 ```
 
 > 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
 >
-> 内存消耗：40.6 MB, 在所有 Java 提交中击败了19.51%的用户
+> 内存消耗：40.6 MB, 在所有 Java 提交中击败了23.82%的用户
