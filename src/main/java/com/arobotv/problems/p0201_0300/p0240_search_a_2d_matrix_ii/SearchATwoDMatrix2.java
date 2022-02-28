@@ -44,25 +44,16 @@ public class SearchATwoDMatrix2 {
     }
 
     public boolean searchMatrix2(int[][] matrix, int target) {
-        exist = false;
-        backtrack(matrix, 0, 0, target);
-        return exist;
-
-    }
-
-    boolean exist;
-
-    void backtrack(int[][] matrix, int i, int j, int target) {
-        if (i >= matrix.length || j >= matrix[0].length)
-            return;
-        if (matrix[i][j] == target) {
-            exist = true;
-            return;
+        int i = 0, j = matrix[0].length - 1;
+        while (i < matrix.length && j >= 0) {
+            if (matrix[i][j] < target)
+                i++;
+            else if (target < matrix[i][j])
+                j--;
+            else
+                return true;
         }
-        if (target < matrix[i][j])
-            return;
-        backtrack(matrix, i + 1, j, target);
-        backtrack(matrix, i, j + 1, target);
+        return false;
     }
 
 }
