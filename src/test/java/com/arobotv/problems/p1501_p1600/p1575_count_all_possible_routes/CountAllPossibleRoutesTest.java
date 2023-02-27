@@ -19,5 +19,24 @@ public class CountAllPossibleRoutesTest {
         int start = 1, finish = 3, fuel = 5;
         int sum = countAllPossibleRoutes.countRoutes(ls, start, finish, fuel);
         Assertions.assertEquals(4, sum);
+        Assertions.assertEquals(4, countAllPossibleRoutes.dfsOptmizeCountRoutes(ls, start, finish, fuel));
+    }
+
+    @Test
+    void testDfs2() {
+        int[] ls = { 4,3,1 };
+        int start = 1, finish = 0, fuel = 6;
+        int sum = countAllPossibleRoutes.countRoutes(ls, start, finish, fuel);
+        Assertions.assertEquals(5, sum);
+        Assertions.assertEquals(5, countAllPossibleRoutes.dfsOptmizeCountRoutes(ls, start, finish, fuel));
+    }
+
+    @Test
+    void testDfs3() {
+        int[] ls = { 5,2,1 };
+        int start = 0, finish = 2, fuel = 3;
+        int sum = countAllPossibleRoutes.countRoutes(ls, start, finish, fuel);
+        Assertions.assertEquals(0, sum);
+        Assertions.assertEquals(0, countAllPossibleRoutes.dfsOptmizeCountRoutes(ls, start, finish, fuel));
     }
 }
