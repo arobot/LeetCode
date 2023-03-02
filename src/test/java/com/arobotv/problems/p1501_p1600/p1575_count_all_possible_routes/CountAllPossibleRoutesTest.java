@@ -20,6 +20,7 @@ public class CountAllPossibleRoutesTest {
         int sum = countAllPossibleRoutes.countRoutes(ls, start, finish, fuel);
         Assertions.assertEquals(4, sum);
         Assertions.assertEquals(4, countAllPossibleRoutes.dfsOptmizeCountRoutes(ls, start, finish, fuel));
+        Assertions.assertEquals(4, countAllPossibleRoutes.countRoutesDp(ls, start, finish, fuel));
     }
 
     @Test
@@ -29,6 +30,7 @@ public class CountAllPossibleRoutesTest {
         int sum = countAllPossibleRoutes.countRoutes(ls, start, finish, fuel);
         Assertions.assertEquals(5, sum);
         Assertions.assertEquals(5, countAllPossibleRoutes.dfsOptmizeCountRoutes(ls, start, finish, fuel));
+        Assertions.assertEquals(5, countAllPossibleRoutes.countRoutesDp(ls, start, finish, fuel));
     }
 
     @Test
@@ -38,5 +40,16 @@ public class CountAllPossibleRoutesTest {
         int sum = countAllPossibleRoutes.countRoutes(ls, start, finish, fuel);
         Assertions.assertEquals(0, sum);
         Assertions.assertEquals(0, countAllPossibleRoutes.dfsOptmizeCountRoutes(ls, start, finish, fuel));
+        Assertions.assertEquals(0, countAllPossibleRoutes.countRoutesDp(ls, start, finish, fuel));
+    }
+
+    @Test
+    void testDfs4() {
+        int[] ls = { 2,1,5 };
+        int start = 0, finish = 0, fuel = 3;
+        int sum = countAllPossibleRoutes.countRoutes(ls, start, finish, fuel);
+        Assertions.assertEquals(2, sum);
+        Assertions.assertEquals(2, countAllPossibleRoutes.dfsOptmizeCountRoutes(ls, start, finish, fuel));
+        Assertions.assertEquals(2, countAllPossibleRoutes.countRoutesDp(ls, start, finish, fuel));
     }
 }

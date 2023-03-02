@@ -97,4 +97,31 @@ public class CountAllPossibleRoutes {
         cache[u][fuel] = sum;
         return sum;
     }
+    /*
+     * 执行用时：163 ms, 在所有 Java 提交中击败了14.65%的用户
+     * 内存消耗：40.7 MB, 在所有 Java 提交中击败了93.77%的用户
+     */
+
+    public int countRoutesDp(int[] locations, int start, int finish, int fuel) {
+        int n = locations.length;
+        int[][] temp = new int[n][fuel + 1];
+
+        for (int i = 0; i <= fuel; i++) {
+            temp[finish][i] = 1;
+        }
+        for (int cur = 0; cur <= fuel; cur++) {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (j != i) {
+                        int need = Math.abs(locations[i] - locations[j]);
+                        if (need <= cur) {
+                            temp[i][cur] += temp[j][cur - need];
+                            temp[i][cur] %= mod;
+                        }
+                    }
+                }
+            }
+        }
+        return temp[start][fuel];
+    }
 }
