@@ -29,6 +29,16 @@ public class ArrayUtils {
         return list;
     }
 
+    public static LinkedList<Character> asList(char[] nums) {
+        if (nums == null || nums.length == 0)
+            return new LinkedList<>();
+        LinkedList<Character> list = new LinkedList<>();
+        for (Character i : nums) {
+            list.add(i);
+        }
+        return list;
+    }
+
     public  static <T> LinkedList<T> asList(T[] nums) {
         if (nums == null || nums.length == 0)
             return new LinkedList<>();
