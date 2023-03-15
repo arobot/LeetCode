@@ -1,6 +1,8 @@
 package com.arobotv.problems.p0301_0400.p0350_intersection_of_two_arrays_ii;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class IntersetcionOfTwoArrays {
     public int[] intersect(int[] nums1, int[] nums2) {
@@ -35,5 +37,21 @@ public class IntersetcionOfTwoArrays {
             }
         }
         return Arrays.copyOf(nums1, index);
+    }
+
+    public int[] intersect3(int[] nums1, int[] nums2) {
+        Map<Integer, Integer> hash = new HashMap<>();
+        for (int i : nums1) {
+            hash.put(i, hash.getOrDefault(i, 0) + 1);
+        }
+        int index = 0;
+        for (int i : nums2) {
+            if (hash.getOrDefault(i, 0) > 0) {
+                nums2[index++] = i;
+                hash.put(i, hash.getOrDefault(i, 0) - 1);
+
+            }
+        }
+        return Arrays.copyOf(nums2, index);
     }
 }

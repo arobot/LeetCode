@@ -36,4 +36,23 @@ public class IntersetcionOfTwoArraysTest {
         result = twoArrays.intersect2(nums3, nums4);
         Assertions.assertEquals("[4, 9]", Arrays.toString(result));
     }
+
+    @Test
+    void test3() {
+        int[] nums1 = { 1, 2, 2, 1 };
+        int[] nums2 = { 2, 2 };
+        int[] result = twoArrays.intersect3(nums1, nums2);
+        System.out.println(Arrays.toString(result));
+        Assertions.assertEquals("[2, 2]", Arrays.toString(result));
+
+    }
+
+    @Test
+    void test4() {
+        int[] nums1 = { 4, 9, 5 };
+        int[] nums2 = { 9, 4, 9, 8, 4 };
+        int[] result = twoArrays.intersect3(nums1, nums2);
+        System.out.println(Arrays.toString(result));
+        Assertions.assertEquals("[9, 4]", Arrays.toString(result));
+    }
 }
