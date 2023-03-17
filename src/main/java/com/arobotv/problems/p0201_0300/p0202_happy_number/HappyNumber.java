@@ -1,4 +1,4 @@
-package com.arobotv.problems.p0201_0300.p202_happy_number;
+package com.arobotv.problems.p0201_0300.p0202_happy_number;
 
 import java.util.HashMap;
 

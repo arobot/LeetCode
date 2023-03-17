@@ -3,6 +3,8 @@ package com.arobotv.problems.p0201_0300.p202_happy_number;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import com.arobotv.problems.p0201_0300.p0202_happy_number.HappyNumber;
+
 public class HappyNumberTest {
 
     @Test
