@@ -17,4 +17,32 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    public static TreeNode of(int val) {
+        return new TreeNode(val);
+    }
+
+    public TreeNode setLeft(int val) {
+        this.left = of(val);
+        return this;
+    }
+
+    public TreeNode setRight(int val) {
+        this.right = of(val);
+        return this;
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public TreeNode getLeft() {
+        return left;
+    }
+
+    public TreeNode getRight() {
+        return right;
+    }
+
+    
 }

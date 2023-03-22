@@ -1,6 +1,7 @@
 package com.arobotv.utils.node;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class TreeUtils {
     public static TreeNode fullBinaryTree(int root, int level, int maxLevel) {
@@ -38,6 +39,10 @@ public class TreeUtils {
         return postOrderList(node, new LinkedList<>());
     }
 
+    public static LinkedList<Integer> levelOrderList(TreeNode node) {
+        return levelOrderList(node, new LinkedList<>());
+    }
+
     static LinkedList<Integer> preOrderList(TreeNode node, LinkedList<Integer> nums) {
         if (node == null)
             return nums;
@@ -62,6 +67,26 @@ public class TreeUtils {
         postOrderList(node.left, nums);
         postOrderList(node.right, nums);
         nums.add(node.val);
+        return nums;
+    }
+
+    static LinkedList<Integer> levelOrderList(TreeNode node, LinkedList<Integer> nums) {
+        if (node == null)
+            return nums;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            int count = queue.size();
+            while (count > 0) {
+                TreeNode n = queue.poll();
+                nums.add(n.getVal());
+                if (n.left != null)
+                    queue.add(n.left);
+                if (n.right != null)
+                    queue.add(n.right);
+                count--;
+            }
+        }
         return nums;
     }
 

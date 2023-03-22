@@ -6,6 +6,13 @@ import java.util.stream.Collectors;
 
 public class PrintUtils {
 
+    public static <T> String printArrayT(Collection<T> arrays) {
+        String line = arrays.stream().map(T::toString).collect(Collectors.joining(","));
+        line = "[" + line + "]";
+        System.out.println(line);
+        return line;
+    }
+
     public static String printArray(Collection<String> arrays) {
         String line = arrays.stream().collect(Collectors.joining(","));
         line = "[" + line + "]";
