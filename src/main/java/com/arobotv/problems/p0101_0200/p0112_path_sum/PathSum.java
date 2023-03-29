@@ -35,29 +35,4 @@ public class PathSum {
         }
         return false;
     }
-
-    public boolean hasPathSum2(TreeNode root, int targetSum) {
-        if (root == null)
-            return false;
-        Deque<TreeNode> deque = new LinkedList<>();
-        deque.add(root);
-        while (!deque.isEmpty()) {
-            int count = deque.size();
-            while (count > 0) {
-                TreeNode node = deque.poll();
-                if (node.left == null && node.right == null && node.val == targetSum)
-                    return true;
-                if (node.left != null) {
-                    node.left.val += node.val;
-                    deque.add(node.left);
-                }
-                if (node.right != null) {
-                    node.right.val += node.val;
-                    deque.add(node.right);
-                }
-                count--;
-            }
-        }
-        return false;
-    }
 }
