@@ -1,4 +1,4 @@
-package com.arobotv.problems.p1001_p1200.p1157_online_majority_element_in_subarray;
+package com.arobotv.problems.p1101_p1200.p1157_online_majority_element_in_subarray;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.arobotv.problems.p1001_p1200.p1017_convert_to_base_n2;
+package com.arobotv.problems.p1001_p1100.p1017_convert_to_base_n2;
 
 public class ConvertToBaseN2 {
 

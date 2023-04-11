@@ -1,4 +1,4 @@
-package com.arobotv.problems.p1001_p1200.p1019_next_greater_node_in_linked_list;
+package com.arobotv.problems.p1001_p1100.p1019_next_greater_node_in_linked_list;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
