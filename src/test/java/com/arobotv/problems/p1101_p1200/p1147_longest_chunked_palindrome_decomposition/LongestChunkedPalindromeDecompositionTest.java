@@ -16,6 +16,7 @@ public class LongestChunkedPalindromeDecompositionTest {
         int result = solution.longestDecomposition(text);
         // 断言等于7
         Assertions.assertEquals(7, result);
+        Assertions.assertEquals(7, solution.longestDecomposition2(text));
     }
 
     /**
@@ -31,6 +32,7 @@ public class LongestChunkedPalindromeDecompositionTest {
         int result = solution.longestDecomposition(text);
         // 断言等于1
         Assertions.assertEquals(1, result);
+        Assertions.assertEquals(1, solution.longestDecomposition2(text));
     }
 
     /**
@@ -45,6 +47,7 @@ public class LongestChunkedPalindromeDecompositionTest {
         int result = solution.longestDecomposition(text);
         // 断言等于11
         Assertions.assertEquals(11, result);
+        Assertions.assertEquals(11, solution.longestDecomposition2(text));
     }
 
     /**
@@ -59,6 +62,7 @@ public class LongestChunkedPalindromeDecompositionTest {
         int result = solution.longestDecomposition(text);
         // 断言等于2
         Assertions.assertEquals(2, result);
+        Assertions.assertEquals(2, solution.longestDecomposition2(text));
     }
 
     /**
@@ -73,6 +77,7 @@ public class LongestChunkedPalindromeDecompositionTest {
         int result = solution.longestDecomposition(text);
         // 断言等于3
         Assertions.assertEquals(3, result);
+        Assertions.assertEquals(3, solution.longestDecomposition2(text));
     }
 
     /**
@@ -87,5 +92,6 @@ public class LongestChunkedPalindromeDecompositionTest {
         int result = solution.longestDecomposition(text);
         // 断言等于4
         Assertions.assertEquals(4, result);
+        Assertions.assertEquals(4, solution.longestDecomposition2(text));
     }
 }

@@ -39,4 +39,25 @@ public class LongestChunkedPalindromeDecomposition {
         }
         return true;
     }
+
+    /*
+     * 使用字符串截取的方式，递归执行
+     * 
+     * 执行用时：1 ms, 在所有 Java 提交中击败了65.47%的用户
+     * 内存消耗：41.4 MB, 在所有 Java 提交中击败了30.50%的用户
+     */
+    public int longestDecomposition2(String text) {
+        int length = text.length();
+        if (length == 0) {
+            return 0;
+        }
+        for (int i = 1; i <= length / 2; i++) {
+            String left = text.substring(0, i);
+            String right = text.substring(length - i, length);
+            if (left.equals(right)) {
+                return 2 + longestDecomposition2(text.substring(i, length - i));
+            }
+        }
+        return 1;
+    }
 }
