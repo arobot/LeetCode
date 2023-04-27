@@ -23,4 +23,6 @@ public class MyHashMapTest {
         map.remove(2);
         Assertions.assertEquals(-1, map.get(2));
     }
+
+    
 }
